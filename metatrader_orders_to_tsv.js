@@ -11,8 +11,25 @@
 **/
 
 function main(input) {
-
   try {
+    const today = new Date();
+
+    const todayArray = [
+      today.getDate(),
+      today.getMonth() + 1,
+      today.getFullYear(),
+    ];
+
+    if (todayArray[0] < 10) {
+      todayArray[0] = '0' + todayArray[0];
+    }
+
+    if (todayArray[1] < 10) {
+      todayArray[1] = '0' + todayArray[1];
+    }
+
+    input.text = `${todayArray.join("/")},Rico\n` + input.text;
+
     var data = input.text;
 
     const lines = data.split('\n');

@@ -22,7 +22,7 @@ function main(input) {
 
     const [date, broker] = header.split(",");
 
-    const regexp = /([CV]) +((?:WDO|WIN) ?\w\d\d) +@?\d\d\/\d\d\/\d\d\d\d +(\d+) +([\d,.]+)00 +DAY ?TRADE +[\d,.]+ +[DC] ([\d,.]+)/g
+    const regexp = /([CV]) +((?:WDO|WIN|BIT) ?\w\d\d) +@?\d\d\/\d\d\/\d\d\d\d +(\d+) +([\d,.]+) +DAY ?TRADE +[\d,.]+ +[DC] ([\d,.]+)/g
     const result = `${date}\t$2\t$1\t$3\t$4\t$5\t${broker}`
 
     input.text = lines.join('\n').replace(regexp, result)

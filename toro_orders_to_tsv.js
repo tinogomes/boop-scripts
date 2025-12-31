@@ -30,14 +30,12 @@ function main(input) {
 
     input.text = input.text
       .replace(/(Fechada|\d\d:\d\d|Totalmente executada|Futuro|Entrada|ompra|enda|R\$ 0,00)\n?/g, '')
-      .replace(/pts/g, '')
       .replace(/\n/g, ' ')
       .replace(/ +/g, ' ')
       .replace(/^$/, '')
       .replace(/ (WIN|WDO)/g, `\n${todayArray.join("/")} $1`)
-      .replace(/,/g, '')
-      .replace(/(\d+)([05]0)/g, '$1,$2 0 Toro')
-      .replace(/Toro +/g, 'Toro')
+      .replace(/\./g, '')
+      .replace(/([0-9,]+) pts/g, '$1 0 Toro')
       .replace(/ +/g, '\t')
       .replace(/\n(\d)/, '$1')
   }

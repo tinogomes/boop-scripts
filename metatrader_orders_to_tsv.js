@@ -40,7 +40,7 @@ function main(input) {
 
     const [date, broker] = header.split(",");
 
-    const regexp = /^(\d{4})\.(\d\d)\.(\d\d).*((?:WIN|WDO).\d\d).*(sell|buy)\D*(\d+)\D*([0-9]+(?:\.\d\d)?).*$/gm;
+    const regexp = /^(\d{4})\.(\d\d)\.(\d\d).*((?:WIN|WDO|BIT|IND|DOL).\d\d).*(sell|buy)\D*(\d+)\D*([0-9]+(?:\.\d\d)?).*$/gm;
     const result = `$3/$2/$1\t$4\t$5\t$6\t$7\t0,00\t${broker}`;
 
     data = lines.join('\n').replace(regexp, result);
